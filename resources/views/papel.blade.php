@@ -89,7 +89,53 @@
 <!-- Seção de Produtos em Destaque -->
 <div class="container mt-5">
     <h2 class="text-start mb-4">Produtos em destaque</h2>
-    <br>
+        
+       <!-- Barra de Pesquisa -->
+        <div class="container mt-4">
+            <input type="text" id="produtoDigitado" class="form-control" placeholder="Pesquisar produto..." onkeyup="pesquisarProduto()"> <br>
+            <input type="text" id="mercadoDigitado" class="form-control" placeholder="Pesquisar mercado..." onkeyup="pesquisarMercado()">
+        </div>
+        <script>
+            function pesquisarProduto() {
+                // Captura o valor do input de pesquisa
+                var input = document.getElementById('produtoDigitado');
+                var filter = input.value.toLowerCase(); // Transforma o texto em minúsculas para comparar
+                var produtosEncontrados = document.getElementsByClassName('product-card'); // Seleciona todos os produtos
+
+                // Loop para verificar cada produto
+                for (var i = 0; i < produtosEncontrados.length; i++) {
+                    var produtoNome = produtosEncontrados[i].getElementsByClassName('product-name')[0]; // Pega o nome do produto
+                    var textoDigitado = produtoNome.textContent || produtoNome.innerText;
+
+                    // Verifica se o nome do produto contém o texto digitado
+                    if (textoDigitado.toLowerCase().indexOf(filter) > -1) {
+                        produtosEncontrados[i].style.display = ""; // Mostra o produto
+                    } else {
+                        produtosEncontrados[i].style.display = "none"; // Esconde o produto
+                    }
+                }
+            }
+            function pesquisarMercado() {
+                // Captura o valor do input de pesquisa
+                var input = document.getElementById('mercadoDigitado');
+                var filter = input.value.toLowerCase(); // Transforma o texto em minúsculas para comparar
+                var mercadosEncontrados = document.getElementsByClassName('product-card'); // Seleciona todos os produtos
+
+                // Loop para verificar cada Mercado
+                for (var i = 0; i < mercadosEncontrados.length; i++) {
+                    var mercadoNome = mercadosEncontrados[i].getElementsByClassName('market-name')[0]; // Pega o nome do Mercado
+                    var textoDigitado = mercadoNome.textContent || mercadoNome.innerText;
+
+                    // Verifica se o nome do Mercado contém o texto digitado
+                    if (textoDigitado.toLowerCase().indexOf(filter) > -1) {
+                        mercadosEncontrados[i].style.display = ""; // Mostra o Mercado
+                    } else {
+                        mercadosEncontrados[i].style.display = "none"; // Esconde o Mercado
+                    }
+                }
+            }
+        </script>
+        <br>
 
     <!-- Produtos -->
     <div class="row">
