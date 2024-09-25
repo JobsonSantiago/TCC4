@@ -63,13 +63,36 @@
     </div>
     @endguest
 
-    <!-- Search Bar -->
+    <!-- Barra de Pesquisa e opções -->
     <div class="container text-center mt-4">
-        <form action="{{ route ('search'}}" class="d-inline" method="get">
+        <form action="{{ route('search') }}" class="d-inline" method="GET">
             <div class="input-group input-group-lg">
-                <input type="text" name="query" class="form-control" placeholder="Digite o nome do produto">
-                <button class="btn btn-outline-secondary" type="button">
-                    <i class="bi bi-search"></i>
+                <select name = "pesquisaProdutos" class="form-select" aria-label="Default select example">
+                    <option value ="0">Selecione o produto que deseja pesquisar:</option>
+                    <option value="Achocolatado">Achocolatado</option>
+                    <option value="Açúcar">Açúcar</option>
+                    <option value="Arroz">Arroz</option>
+                    <option value="Bolacha">Bolacha</option>
+                    <option value="Bombril">Bombril</option>
+                    <option value="Café">Café</option>
+                    <option value="CremeDeLeite">Creme de Leite</option>
+                    <option value="Detergente">Detergente</option>
+                    <option value="FarinhaDeTrigo">Farinha de Trigo</option>
+                    <option value="FarinhaTemperada">Farinha Temperada</option>
+                    <option value="Feijão">Feijão</option>
+                    <option value="Leite">Leite</option>
+                    <option value="LeiteCondensado">Leite Condensado</option>
+                    <option value="Macarrão">Macarrão</option>
+                    <option value="MolhoDeTomate">Molho de Tomate</option>
+                    <option value="Oleo">Óleo</option>
+                    <option value="Papel">Papel</option>
+                    <option value="Pasta">Pasta de Dente</option>
+                    <option value="Sabão">Sabão</option>
+                    <option value="Sabonete">Sabonete</option>
+                    <option value="Suco">Suco</option>
+                </select>
+                <button class="btn btn-outline-secondary" type="submit">
+                    <i class="bi bi-search">Pesquisar</i>
                 </button>
             </div>
         </form>
