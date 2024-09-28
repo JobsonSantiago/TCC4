@@ -9,6 +9,12 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Importação do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Inclusão do JavaScript -->
+    <script src="{{ asset('js/scriptsprodutos.js') }}"></script>
+
+
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -69,9 +75,9 @@
 
                 <!-- Nome -->
                 <div class="mb-3">
-                    <x-input-label for="nome" :value="__('Nome')" />
-                    <x-text-input id="nome" class="form-control" type="text" name="nome" :value="old('nome')" required autofocus autocomplete="name" />
-                    <x-input-error :messages="$errors->get('nome')" class="mt-2" />
+                    <x-input-label for="name" :value="__('Nome')" />
+                    <x-text-input id="name" class="form-control" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                    <x-input-error :messages="$errors->get('name')" class="mt-2" />
                 </div>
 
                 <!-- E-mail -->

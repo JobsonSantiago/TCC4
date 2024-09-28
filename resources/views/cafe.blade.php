@@ -8,6 +8,12 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Importação do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Inclusão do JavaScript -->
+    <script src="{{ asset('js/scriptsprodutos.js') }}"></script>
+
+
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -95,50 +101,24 @@
             <input type="text" id="produtoDigitado" class="form-control" placeholder="Pesquisar produto..." onkeyup="pesquisarProduto()"> <br>
             <input type="text" id="mercadoDigitado" class="form-control" placeholder="Pesquisar mercado..." onkeyup="pesquisarMercado()">
         </div>
-        <script>
-            function pesquisarProduto() {
-                // Captura o valor do input de pesquisa
-                var input = document.getElementById('produtoDigitado');
-                var filter = input.value.toLowerCase(); // Transforma o texto em minúsculas para comparar
-                var produtosEncontrados = document.getElementsByClassName('product-card'); // Seleciona todos os produtos
-
-                // Loop para verificar cada produto
-                for (var i = 0; i < produtosEncontrados.length; i++) {
-                    var produtoNome = produtosEncontrados[i].getElementsByClassName('product-name')[0]; // Pega o nome do produto
-                    var textoDigitado = produtoNome.textContent || produtoNome.innerText;
-
-                    // Verifica se o nome do produto contém o texto digitado
-                    if (textoDigitado.toLowerCase().indexOf(filter) > -1) {
-                        produtosEncontrados[i].style.display = ""; // Mostra o produto
-                    } else {
-                        produtosEncontrados[i].style.display = "none"; // Esconde o produto
-                    }
-                }
-            }
-            function pesquisarMercado() {
-                // Captura o valor do input de pesquisa
-                var input = document.getElementById('mercadoDigitado');
-                var filter = input.value.toLowerCase(); // Transforma o texto em minúsculas para comparar
-                var mercadosEncontrados = document.getElementsByClassName('product-card'); // Seleciona todos os produtos
-
-                // Loop para verificar cada Mercado
-                for (var i = 0; i < mercadosEncontrados.length; i++) {
-                    var mercadoNome = mercadosEncontrados[i].getElementsByClassName('market-name')[0]; // Pega o nome do Mercado
-                    var textoDigitado = mercadoNome.textContent || mercadoNome.innerText;
-
-                    // Verifica se o nome do Mercado contém o texto digitado
-                    if (textoDigitado.toLowerCase().indexOf(filter) > -1) {
-                        mercadosEncontrados[i].style.display = ""; // Mostra o Mercado
-                    } else {
-                        mercadosEncontrados[i].style.display = "none"; // Esconde o Mercado
-                    }
-                }
-            }
-        </script>
+        <br>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="opcaoBarato" checked onchange="ordenarProdutos()">
+            <label class="form-check-label" for="opcaoBarato">
+                Organizar do mais barato ao mais caro
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="opcaoCaro" onchange="ordenarProdutos()">
+            <label class="form-check-label" for="opcaoCaro">
+                Organizar do mais caro ao mais barato
+            </label>
+        </div>
+        
         <br>
 
     <!-- Produtos -->
-    <div class="row">
+            <div class="row" id="produtos-container">
         <div class="col-lg-4 col-md-4">
             <div class="product-card">
                 <img src="images/pr_cafe.png" alt="Imagem do Produto 1">
