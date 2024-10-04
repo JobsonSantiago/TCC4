@@ -60,7 +60,7 @@
     </nav>
     @auth
     <div class="container text-center mt-3">
-        <p class="alert alert-success">Bem-vindo, {{ Auth::user()->nome }}!</p>
+        <p class="alert alert-success">Bem-vindo, {{ Auth::user()->name }}!</p>
     </div>
     @endauth
     @guest

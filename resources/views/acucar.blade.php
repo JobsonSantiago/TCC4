@@ -137,7 +137,7 @@
                         <p class="market-name">Mercado Noemia</p>
                         <br>
                         <br>
-                        <p class="product-review-label">Avalie o produto:</p>
+                        <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                         <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
                     </div>
                 </div>
@@ -152,7 +152,7 @@
                         <p class="market-name">Mercado Tietê</p>
                         <br>
                         <br>
-                        <p class="product-review-label">Avalie o produto:</p>
+                        <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                         <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
                     </div>
                 </div>
@@ -167,7 +167,7 @@
                         <p class="market-name">Mercado Economix</p>
                         <br>
                         <br>
-                        <p class="product-review-label">Avalie o produto:</p>
+                        <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                         <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
                     </div>
                 </div>
@@ -182,7 +182,7 @@
                         <p class="market-name">Mercado Atacadinho</p>
                         <br>
                         <br>
-                        <p class="product-review-label">Avalie o produto:</p>
+                        <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                         <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
                     </div>
                 </div>
@@ -197,7 +197,7 @@
                         <p class="market-name">Mercado Noemia</p>
                         <br>
                         <br>
-                        <p class="product-review-label">Avalie o produto:</p>
+                        <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                         <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
                     </div>
                 </div>
@@ -212,7 +212,7 @@
                         <p class="market-name">Mercado Tietê</p>
                         <br>
                         <br>
-                        <p class="product-review-label">Avalie o produto:</p>
+                        <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                         <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
                     </div>
                 </div>
@@ -227,7 +227,7 @@
                         <p class="market-name">Mercado Economix</p>
                         <br>
                         <br>
-                        <p class="product-review-label">Avalie o produto:</p>
+                        <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                         <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
                     </div>
                 </div>
@@ -242,7 +242,7 @@
                         <p class="market-name">Mercado Atacadinho</p>
                         <br>
                         <br>
-                        <p class="product-review-label">Avalie o produto:</p>
+                        <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                         <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
                     </div>
                 </div>

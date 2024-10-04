@@ -135,8 +135,21 @@
                             <p class="market-name">Mercado Noemia</p>
                             <br>
                             <br>
-                            <p class="product-review-label">Avalie o produto:</p>
-                            <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
+                            <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
+                            <form action="{{ route('avaliacao_produto') }}" class="d-inline" method="POST">
+                                <input type="hidden" name="id_produto" value="17"> <!-- ID do produto -->
+                                <input type="hidden" name="id_mercado" value="1"> <!-- ID do mercado -->
+                                @csrf
+                                <div class="input-group input-group-sm">
+                                    <select name="avaliacao_preco" class="form-select" aria-label="Default select example">
+                                        <option value="Correto">Correto</option>
+                                        <option value="Incorreto">Incorreto</option>
+                                    </select>
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <i class="bi bi-search">Registrar</i>
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -151,7 +164,7 @@
                             <p class="market-name">Mercado Tietê</p>
                             <br>
                             <br>
-                            <p class="product-review-label">Avalie o produto:</p>
+                            <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                             <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
                         </div>
                     </div>
@@ -166,7 +179,7 @@
                             <p class="market-name">Mercado Economix</p>
                             <br>
                             <br>
-                            <p class="product-review-label">Avalie o produto:</p>
+                            <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                             <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
                         </div>
                     </div>
@@ -181,7 +194,7 @@
                             <p class="market-name">Mercado Atacadinho</p>
                             <br>
                             <br>
-                            <p class="product-review-label">Avalie o produto:</p>
+                            <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                             <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
                         </div>
                     </div>
@@ -196,7 +209,7 @@
                             <p class="market-name">Mercado Noemia</p>
                             <br>
                             <br>
-                            <p class="product-review-label">Avalie o produto:</p>
+                            <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                             <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
                         </div>
                     </div>
@@ -211,7 +224,7 @@
                             <p class="market-name">Mercado Tietê</p>
                             <br>
                             <br>
-                            <p class="product-review-label">Avalie o produto:</p>
+                            <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                             <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
                         </div>
                     </div>
@@ -226,7 +239,7 @@
                             <p class="market-name">Mercado Economix</p>
                             <br>
                             <br>
-                            <p class="product-review-label">Avalie o produto:</p>
+                            <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                             <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
                         </div>
                     </div>
@@ -241,7 +254,7 @@
                             <p class="market-name">Mercado Atacadinho</p>
                             <br>
                             <br>
-                            <p class="product-review-label">Avalie o produto:</p>
+                            <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                             <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
                         </div>
                     </div>
