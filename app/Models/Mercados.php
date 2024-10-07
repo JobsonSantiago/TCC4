@@ -4,7 +4,7 @@
     use Illuminate\Database\Eloquent\Factories\HasFactory;
     use Illuminate\Database\Eloquent\Model;
     
-    class Mercado extends Model
+    class Mercados extends Model
     {
         use HasFactory;
     

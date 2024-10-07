@@ -23,20 +23,14 @@
             text-align: center;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 50px;
-            /* Espaçamento entre as linhas */
-            max-width: 335px;
-            /* Largura máxima dos cards */
+            margin-bottom: 50px; /* Espaçamento entre as linhas */
+            max-width: 335px; /* Largura máxima dos cards */
         }
-
         .product-card img {
             width: 60%;
-            height: 250px;
-            /* Ajuste a altura da imagem */
-            object-fit: cover;
-            /* Ajusta a imagem para cobrir o card */
+            height: 250px; /* Ajuste a altura da imagem */
+            object-fit: cover; /* Ajusta a imagem para cobrir o card */
         }
-
         .product-price {
             color: red;
             font-size: 24px;
@@ -146,8 +140,23 @@
                                         <option value="Incorreto">Incorreto</option>
                                     </select>
                                     <button class="btn btn-outline-secondary" type="submit">
-                                        <i class="bi bi-search">Registrar</i>
+                                        <i class="bi bi-search">Registrar</i> <br>
                                     </button>
+                                    @php
+                                    // Contando as avaliações
+                                    $correto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Correto')
+                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_produto', 17) // ID do produto
+                                    ->count();
+
+                                    $incorreto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Incorreto')
+                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_produto', 17) // ID do produto
+                                    ->count();
+                                    @endphp
+                                    <h6 class="mt-4">Quantidade de Avaliações:</h6>
+                                    <p class="text-success">O preço está correto: <strong>{{ $correto }}</strong></p>
+                                    <p class="text-danger">O preço está incorreto: <strong>{{ $incorreto }}</strong></p>
                                 </div>
                             </form>
                         </div>
@@ -165,7 +174,35 @@
                             <br>
                             <br>
                             <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
-                            <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
+                            <form action="{{ route('avaliacao_produto') }}" class="d-inline" method="POST">
+                                <input type="hidden" name="id_produto" value="17"> <!-- ID do produto -->
+                                <input type="hidden" name="id_mercado" value="1"> <!-- ID do mercado -->
+                                @csrf
+                                <div class="input-group input-group-sm">
+                                    <select name="avaliacao_preco" class="form-select" aria-label="Default select example">
+                                        <option value="Correto">Correto</option>
+                                        <option value="Incorreto">Incorreto</option>
+                                    </select>
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <i class="bi bi-search">Registrar</i> <br>
+                                    </button>
+                                    @php
+                                    // Contando as avaliações
+                                    $correto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Correto')
+                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_produto', 17) // ID do produto
+                                    ->count();
+
+                                    $incorreto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Incorreto')
+                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_produto', 17) // ID do produto
+                                    ->count();
+                                    @endphp
+                                    <h6 class="mt-4">Quantidade de Avaliações:</h6>
+                                    <p class="text-success">O preço está correto: <strong>{{ $correto }}</strong></p>
+                                    <p class="text-danger">O preço está incorreto: <strong>{{ $incorreto }}</strong></p>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -180,7 +217,35 @@
                             <br>
                             <br>
                             <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
-                            <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
+                            <form action="{{ route('avaliacao_produto') }}" class="d-inline" method="POST">
+                                <input type="hidden" name="id_produto" value="17"> <!-- ID do produto -->
+                                <input type="hidden" name="id_mercado" value="1"> <!-- ID do mercado -->
+                                @csrf
+                                <div class="input-group input-group-sm">
+                                    <select name="avaliacao_preco" class="form-select" aria-label="Default select example">
+                                        <option value="Correto">Correto</option>
+                                        <option value="Incorreto">Incorreto</option>
+                                    </select>
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <i class="bi bi-search">Registrar</i> <br>
+                                    </button>
+                                    @php
+                                    // Contando as avaliações
+                                    $correto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Correto')
+                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_produto', 17) // ID do produto
+                                    ->count();
+
+                                    $incorreto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Incorreto')
+                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_produto', 17) // ID do produto
+                                    ->count();
+                                    @endphp
+                                    <h6 class="mt-4">Quantidade de Avaliações:</h6>
+                                    <p class="text-success">O preço está correto: <strong>{{ $correto }}</strong></p>
+                                    <p class="text-danger">O preço está incorreto: <strong>{{ $incorreto }}</strong></p>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -195,7 +260,35 @@
                             <br>
                             <br>
                             <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
-                            <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
+                            <form action="{{ route('avaliacao_produto') }}" class="d-inline" method="POST">
+                                <input type="hidden" name="id_produto" value="17"> <!-- ID do produto -->
+                                <input type="hidden" name="id_mercado" value="1"> <!-- ID do mercado -->
+                                @csrf
+                                <div class="input-group input-group-sm">
+                                    <select name="avaliacao_preco" class="form-select" aria-label="Default select example">
+                                        <option value="Correto">Correto</option>
+                                        <option value="Incorreto">Incorreto</option>
+                                    </select>
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <i class="bi bi-search">Registrar</i> <br>
+                                    </button>
+                                    @php
+                                    // Contando as avaliações
+                                    $correto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Correto')
+                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_produto', 17) // ID do produto
+                                    ->count();
+
+                                    $incorreto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Incorreto')
+                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_produto', 17) // ID do produto
+                                    ->count();
+                                    @endphp
+                                    <h6 class="mt-4">Quantidade de Avaliações:</h6>
+                                    <p class="text-success">O preço está correto: <strong>{{ $correto }}</strong></p>
+                                    <p class="text-danger">O preço está incorreto: <strong>{{ $incorreto }}</strong></p>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -210,7 +303,35 @@
                             <br>
                             <br>
                             <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
-                            <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
+                            <form action="{{ route('avaliacao_produto') }}" class="d-inline" method="POST">
+                                <input type="hidden" name="id_produto" value="17"> <!-- ID do produto -->
+                                <input type="hidden" name="id_mercado" value="1"> <!-- ID do mercado -->
+                                @csrf
+                                <div class="input-group input-group-sm">
+                                    <select name="avaliacao_preco" class="form-select" aria-label="Default select example">
+                                        <option value="Correto">Correto</option>
+                                        <option value="Incorreto">Incorreto</option>
+                                    </select>
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <i class="bi bi-search">Registrar</i> <br>
+                                    </button>
+                                    @php
+                                    // Contando as avaliações
+                                    $correto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Correto')
+                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_produto', 17) // ID do produto
+                                    ->count();
+
+                                    $incorreto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Incorreto')
+                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_produto', 17) // ID do produto
+                                    ->count();
+                                    @endphp
+                                    <h6 class="mt-4">Quantidade de Avaliações:</h6>
+                                    <p class="text-success">O preço está correto: <strong>{{ $correto }}</strong></p>
+                                    <p class="text-danger">O preço está incorreto: <strong>{{ $incorreto }}</strong></p>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -225,7 +346,35 @@
                             <br>
                             <br>
                             <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
-                            <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
+                            <form action="{{ route('avaliacao_produto') }}" class="d-inline" method="POST">
+                                <input type="hidden" name="id_produto" value="17"> <!-- ID do produto -->
+                                <input type="hidden" name="id_mercado" value="1"> <!-- ID do mercado -->
+                                @csrf
+                                <div class="input-group input-group-sm">
+                                    <select name="avaliacao_preco" class="form-select" aria-label="Default select example">
+                                        <option value="Correto">Correto</option>
+                                        <option value="Incorreto">Incorreto</option>
+                                    </select>
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <i class="bi bi-search">Registrar</i> <br>
+                                    </button>
+                                    @php
+                                    // Contando as avaliações
+                                    $correto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Correto')
+                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_produto', 17) // ID do produto
+                                    ->count();
+
+                                    $incorreto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Incorreto')
+                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_produto', 17) // ID do produto
+                                    ->count();
+                                    @endphp
+                                    <h6 class="mt-4">Quantidade de Avaliações:</h6>
+                                    <p class="text-success">O preço está correto: <strong>{{ $correto }}</strong></p>
+                                    <p class="text-danger">O preço está incorreto: <strong>{{ $incorreto }}</strong></p>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -240,7 +389,35 @@
                             <br>
                             <br>
                             <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
-                            <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
+                            <form action="{{ route('avaliacao_produto') }}" class="d-inline" method="POST">
+                                <input type="hidden" name="id_produto" value="17"> <!-- ID do produto -->
+                                <input type="hidden" name="id_mercado" value="1"> <!-- ID do mercado -->
+                                @csrf
+                                <div class="input-group input-group-sm">
+                                    <select name="avaliacao_preco" class="form-select" aria-label="Default select example">
+                                        <option value="Correto">Correto</option>
+                                        <option value="Incorreto">Incorreto</option>
+                                    </select>
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <i class="bi bi-search">Registrar</i> <br>
+                                    </button>
+                                    @php
+                                    // Contando as avaliações
+                                    $correto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Correto')
+                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_produto', 17) // ID do produto
+                                    ->count();
+
+                                    $incorreto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Incorreto')
+                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_produto', 17) // ID do produto
+                                    ->count();
+                                    @endphp
+                                    <h6 class="mt-4">Quantidade de Avaliações:</h6>
+                                    <p class="text-success">O preço está correto: <strong>{{ $correto }}</strong></p>
+                                    <p class="text-danger">O preço está incorreto: <strong>{{ $incorreto }}</strong></p>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -255,7 +432,35 @@
                             <br>
                             <br>
                             <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
-                            <input type="text" class="form-control product-input" placeholder="Deixe sua avaliação">
+                            <form action="{{ route('avaliacao_produto') }}" class="d-inline" method="POST">
+                                <input type="hidden" name="id_produto" value="17"> <!-- ID do produto -->
+                                <input type="hidden" name="id_mercado" value="1"> <!-- ID do mercado -->
+                                @csrf
+                                <div class="input-group input-group-sm">
+                                    <select name="avaliacao_preco" class="form-select" aria-label="Default select example">
+                                        <option value="Correto">Correto</option>
+                                        <option value="Incorreto">Incorreto</option>
+                                    </select>
+                                    <button class="btn btn-outline-secondary" type="submit">
+                                        <i class="bi bi-search">Registrar</i> <br>
+                                    </button>
+                                    @php
+                                    // Contando as avaliações
+                                    $correto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Correto')
+                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_produto', 17) // ID do produto
+                                    ->count();
+
+                                    $incorreto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Incorreto')
+                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_produto', 17) // ID do produto
+                                    ->count();
+                                    @endphp
+                                    <h6 class="mt-4">Quantidade de Avaliações:</h6>
+                                    <p class="text-success">O preço está correto: <strong>{{ $correto }}</strong></p>
+                                    <p class="text-danger">O preço está incorreto: <strong>{{ $incorreto }}</strong></p>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
