@@ -1,19 +1,19 @@
 // public/js/scriptsprodutos.js
 console.log("Arquivo JS carregado!");
 
-function pesquisarProduto() {
-    // Captura o valor do input de pesquisa
-    var input = document.getElementById('produtoDigitado');
-    var filter = input.value.toLowerCase(); // Transforma o texto em minúsculas para comparar
+function pesquisar() {
+    // Captura os valores dos inputs de pesquisa
+    var inputProduto = document.getElementById('produtoDigitado').value.toLowerCase();
+    var inputMercado = document.getElementById('mercadoDigitado').value.toLowerCase();
     var produtosEncontrados = document.getElementsByClassName('product-card'); // Seleciona todos os produtos
 
     // Loop para verificar cada produto
     for (var i = 0; i < produtosEncontrados.length; i++) {
-        var produtoNome = produtosEncontrados[i].getElementsByClassName('product-name')[0]; // Pega o nome do produto
-        var textoDigitado = produtoNome.textContent || produtoNome.innerText;
+        var produtoNome = produtosEncontrados[i].getElementsByClassName('product-name')[0].textContent.toLowerCase();
+        var mercadoNome = produtosEncontrados[i].getElementsByClassName('market-name')[0].textContent.toLowerCase();
 
-        // Verifica se o nome do produto contém o texto digitado
-        if (textoDigitado.toLowerCase().indexOf(filter) > -1) {
+        // Verifica se o nome do produto e o nome do mercado contêm os textos digitados
+        if (produtoNome.indexOf(inputProduto) > -1 && mercadoNome.indexOf(inputMercado) > -1) {
             produtosEncontrados[i].style.display = ""; // Mostra o produto
         } else {
             produtosEncontrados[i].style.display = "none"; // Esconde o produto
@@ -21,25 +21,6 @@ function pesquisarProduto() {
     }
 }
 
-function pesquisarMercado() {
-    // Captura o valor do input de pesquisa
-    var input = document.getElementById('mercadoDigitado');
-    var filter = input.value.toLowerCase(); // Transforma o texto em minúsculas para comparar
-    var mercadosEncontrados = document.getElementsByClassName('product-card'); // Seleciona todos os produtos
-
-    // Loop para verificar cada Mercado
-    for (var i = 0; i < mercadosEncontrados.length; i++) {
-        var mercadoNome = mercadosEncontrados[i].getElementsByClassName('market-name')[0]; // Pega o nome do Mercado
-        var textoDigitado = mercadoNome.textContent || mercadoNome.innerText;
-
-        // Verifica se o nome do Mercado contém o texto digitado
-        if (textoDigitado.toLowerCase().indexOf(filter) > -1) {
-            mercadosEncontrados[i].style.display = ""; // Mostra o Mercado
-        } else {
-            mercadosEncontrados[i].style.display = "none"; // Esconde o Mercado
-        }
-    }
-}
 
 function favoritarProdutos() {
 
