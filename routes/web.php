@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PesquisaController;
 use App\Http\Controllers\AvaliacaoProdutoController;
+use App\Http\Controllers\AvaliacaoMercadoController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use PhpOption\Option;
@@ -26,10 +27,27 @@ Route::middleware('auth')->group(function () {
 
     //rota para registrar avaliação do preço dos produtos
     Route::post('/avaliacao_produto', [AvaliacaoProdutoController::class, 'avaliacao_produto'])->name('avaliacao_produto');
+
+    //rota para registrar avaliação os mercados
+    Route::post('/avaliacao_mercados', [AvaliacaoMercadoController::class, 'avaliacao_mercados'])->name('avaliacao_mercados');
 });
 
 //rota que chama o metodo pesquisa no PesquisaController para que a página seja redirecionada
 Route::get('/search', [PesquisaController::class, 'pesquisa'])->name('search');
+
+//rota para redirecionar para a localização do mercado
+Route::get('/mercado1', function () {
+    return redirect()->away('https://maps.app.goo.gl/ytZgiWfXFNCrCM14A');
+});
+Route::get('/mercado2', function () {
+    return redirect()->away('https://maps.app.goo.gl/B4RcYk9qC67h7gr97');
+});
+Route::get('/mercado3', function () {
+    return redirect()->away('https://maps.app.goo.gl/pzXmMQthMtuqHCHS8');
+});
+Route::get('/mercado4', function () {
+    return redirect()->away('https://maps.app.goo.gl/wChhgj7tFUCMDZUT7');
+});
 
 //rotas de views
 Route::get('/mercados', function () {

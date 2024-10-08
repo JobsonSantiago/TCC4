@@ -117,5 +117,82 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Chama a função quando o script é carregado
     organizarProdutos();
+
+    const estrelas = document.querySelectorAll('.avaliacaoMercado1 i');
+    const hiddenInput = document.getElementById('avaliacao_mercado1');
+
+    estrelas.forEach(star => {
+        star.addEventListener('click', () => {
+            const value = star.getAttribute('data-value');
+            hiddenInput.value = value; // Set the value of the hidden input
+
+            estrelas.forEach(s => {
+                s.classList.remove('fas', 'far');
+                if (s.getAttribute('data-value') <= value) {
+                    s.classList.add('fas');
+                } else {
+                    s.classList.add('far');
+                }
+            });
+        });
+
+
+
+    });
+
+    const estrelas2 = document.querySelectorAll('.avaliacaoMercado2 i');
+    const hiddenInput2 = document.getElementById('avaliacao_mercado2');
+    estrelas2.forEach(star => {
+        star.addEventListener('click', () => {
+            const value = star.getAttribute('data-value');
+            hiddenInput2.value = value; // Set the value of the hidden input
+
+            estrelas2.forEach(s => {
+                s.classList.remove('fas', 'far');
+                if (s.getAttribute('data-value') <= value) {
+                    s.classList.add('fas');
+                } else {
+                    s.classList.add('far');
+                }
+            });
+        });
+    });
+
+    const estrelas3 = document.querySelectorAll('.avaliacaoMercado3 i');
+    const hiddenInput3 = document.getElementById('avaliacao_mercado3');
+    estrelas3.forEach(star => {
+        star.addEventListener('click', () => {
+            const value = star.getAttribute('data-value');
+            hiddenInput3.value = value; // Set the value of the hidden input
+
+            estrelas3.forEach(s => {
+                s.classList.remove('fas', 'far');
+                if (s.getAttribute('data-value') <= value) {
+                    s.classList.add('fas');
+                } else {
+                    s.classList.add('far');
+                }
+            });
+        });
+    });
+
+    const estrelas4 = document.querySelectorAll('.avaliacaoMercado4 i');
+    const hiddenInput4 = document.getElementById('avaliacao_mercado4');
+    estrelas4.forEach(star => {
+        star.addEventListener('click', () => {
+            const value = star.getAttribute('data-value');
+            hiddenInput4.value = value; // Set the value of the hidden input
+
+            estrelas4.forEach(s => {
+                s.classList.remove('fas', 'far');
+                if (s.getAttribute('data-value') <= value) {
+                    s.classList.add('fas');
+                } else {
+                    s.classList.add('far');
+                }
+            });
+        });
+    });
+
 });
 
