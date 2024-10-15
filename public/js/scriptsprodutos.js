@@ -21,45 +21,6 @@ function pesquisar() {
     }
 }
 
-
-function favoritarProdutos() {
-
-    // Seleciona todos os botões de favorito e adiciona um ouvinte de evento de clique a cada um
-    document.querySelectorAll('.favorite-button').forEach(button => {
-        button.addEventListener('click', () => {
-            // Encontra o card do produto mais próximo do botão clicado
-            const card = button.closest('.product-card');
-            // Obtém o nome do produto a partir do card
-            const name = card.querySelector('.product-name').innerText;
-            // Obtém a lista de favoritos do localStorage ou cria um array vazio
-            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-            // Verifica se o produto já está na lista de favoritos
-            const isFavorite = favorites.some(fav => fav.name === name);
-
-            if (isFavorite) {
-                // Se o produto é favorito, altera a exibição dos ícones
-                button.querySelector('.heartEmpty').style.display = 'inline'; // Exibe coração vazio
-                button.querySelector('.heartFilled').style.display = 'none'; // Oculta coração preenchido
-                // Remove o produto da lista de favoritos e atualiza o localStorage
-                localStorage.setItem('favorites', JSON.stringify(favorites.filter(fav => fav.name !== name)));
-            } else {
-                // Se o produto não é favorito, altera a exibição dos ícones
-                button.querySelector('.heartEmpty').style.display = 'none'; // Oculta coração vazio
-                button.querySelector('.heartFilled').style.display = 'inline'; // Exibe coração preenchido
-                // Adiciona o produto à lista de favoritos
-                favorites.push({
-                    name: name,
-                    price: card.querySelector('.product-price').innerText,
-                    market: card.querySelector('.market-name').innerText,
-                    img: card.querySelector('img').src
-                });
-                // Atualiza o localStorage com a nova lista de favoritos
-                localStorage.setItem('favorites', JSON.stringify(favorites));
-            }
-        });
-    });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
 
     function organizarProdutos() {

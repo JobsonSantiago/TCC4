@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\AvaliacaoProduto; // Atualize para usar AvaliacaoProduto
+use App\Models\AvaliacaoProduto;
 use App\Models\ProdutosCaracteristicas;
 
 class AvaliacaoProdutoController extends Controller

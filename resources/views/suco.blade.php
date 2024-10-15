@@ -164,6 +164,15 @@
                         </button>
                     </div>
                     <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                         <br>
                         <p class="product-name">Refresco em Pó Tang 18g</p>
                         <p class="product-price">R$ 50,00</p>
@@ -240,6 +249,15 @@
                         </button>
                     </div>
                     <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                         <br>
                         <p class="product-name">Refresco em Pó Tang 18g</p>
                         <p class="product-price">R$ 50,00</p>
@@ -316,6 +334,15 @@
                         </button>
                     </div>
                     <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                         <br>
                         <p class="product-name">Refresco em Pó Tang 18g</p>
                         <p class="product-price">R$ 50,00</p>
@@ -392,6 +419,15 @@
                         </button>
                     </div>
                     <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                         <br>
                         <p class="product-name">Refresco em Pó Tang 18g</p>
                         <p class="product-price">R$ 50,00</p>
@@ -468,6 +504,15 @@
                         </button>
                     </div>
                     <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                         <br>
                         <p class="product-name">Refresco Em Pó Mid 20g</p>
                         <p class="product-price">R$ 50,00</p>
@@ -545,6 +590,15 @@
                         </button>
                     </div>
                     <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                         <br>
                         <p class="product-name">Refresco Em Pó Mid 20g</p>
                         <p class="product-price">R$ 55,00</p>
@@ -622,6 +676,15 @@
                         </button>
                     </div>
                     <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                         <br>
                         <p class="product-name">Refresco Em Pó Mid 20g</p>
                         <p class="product-price">R$ 52,00</p>
@@ -699,6 +762,15 @@
                         </button>
                     </div>
                     <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                         <br>
                         <p class="product-name">Refresco Em Pó Mid 20g</p>
                         <p class="product-price">R$ 53,00</p>

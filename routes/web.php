@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Favorito;
 use App\Http\Controllers\PesquisaController;
+use App\Http\Controllers\FavoritoController;
 use App\Http\Controllers\AvaliacaoProdutoController;
 use App\Http\Controllers\AvaliacaoMercadoController;
 use App\Http\Controllers\ProfileController;
@@ -17,7 +19,6 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-
 // Proteção de rotas para usuários autenticados (usando middleware auth)
 Route::middleware('auth')->group(function () {
     // Exemplo de rota protegida
@@ -30,6 +31,13 @@ Route::middleware('auth')->group(function () {
 
     //rota para registrar avaliação os mercados
     Route::post('/avaliacao_mercados', [AvaliacaoMercadoController::class, 'avaliacao_mercados'])->name('avaliacao_mercados');
+
+    //adicionar favoritos
+    Route::post('/favoritar/adicionar', [FavoritoController::class, 'adicionar'])->name('favoritar');
+
+    // Rota para o dashboard, onde seá apresentado os favoritos
+    Route::get('/dashboard', [FavoritoController::class, 'listar'])->name('dashboard');
+
 });
 
 //rota que chama o metodo pesquisa no PesquisaController para que a página seja redirecionada
@@ -166,10 +174,6 @@ Route::get('/sabao', function () {
 Route::get('/bombril', function () {
     return view('bombril');
 })->name('bombril');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -19,13 +19,13 @@
         // Definição de relacionamento com o modelo Produto
         public function produto()
         {
-            return $this->belongsTo(Produto::class, 'id_produto', 'id_produto');
+            return $this->belongsTo(Produtos::class, 'id_produto', 'id_produto');
         }
     
         // Definição de relacionamento com o modelo Mercado
         public function mercado()
         {
-            return $this->belongsTo(Mercado::class, 'id_mercado', 'id_mercado');
+            return $this->belongsTo(Mercados::class, 'id_mercado', 'id_mercado');
         }
     
         // Definição de relacionamento com AvaliacaoProduto

@@ -23,14 +23,20 @@
             text-align: center;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 50px; /* Espaçamento entre as linhas */
-            max-width: 335px; /* Largura máxima dos cards */
+            margin-bottom: 50px;
+            /* Espaçamento entre as linhas */
+            max-width: 335px;
+            /* Largura máxima dos cards */
         }
+
         .product-card img {
             width: 60%;
-            height: 250px; /* Ajuste a altura da imagem */
-            object-fit: cover; /* Ajusta a imagem para cobrir o card */
+            height: 250px;
+            /* Ajuste a altura da imagem */
+            object-fit: cover;
+            /* Ajusta a imagem para cobrir o card */
         }
+
         .product-price {
             color: red;
             font-size: 24px;
@@ -98,8 +104,8 @@
 
         <!-- Barra de Pesquisa -->
         <div class="container mt-4">
-            <input type="text" id="produtoDigitado" class="form-control" placeholder="Pesquisar produto..." onkeyup="pesquisar()"> <br>
-            <input type="text" id="mercadoDigitado" class="form-control" placeholder="Pesquisar mercado..." onkeyup="pesquisar()">
+            <input type="text" id="produtoDigitado" class="form-control" placeholder="Pesquisar produto..." onkeyup="pesquisarProduto()"> <br>
+            <input type="text" id="mercadoDigitado" class="form-control" placeholder="Pesquisar mercado..." onkeyup="pesquisarMercado()">
         </div>
         <br>
         <div class="form-check">
@@ -122,7 +128,15 @@
                     <div class="product-card">
                         <img src="images/pr_achocolatado.png" alt="Imagem do Produto 1">
                         <div class="product-info">
-
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                             <br>
                             <p class="product-name">Achocolatado em Pó Italac 400G</p>
                             <p class="product-price">R$ 30,00</p>
@@ -166,6 +180,15 @@
                     <div class="product-card">
                         <img src="images/pr_achocolatado.png" alt="Imagem do Produto 2">
                         <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
 
                             <br>
                             <p class="product-name">Achocolatado em Pó Italac 400G</p>
@@ -176,7 +199,7 @@
                             <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                             <form action="{{ route('avaliacao_produto') }}" class="d-inline" method="POST">
                                 <input type="hidden" name="id_produto" value="17"> <!-- ID do produto -->
-                                <input type="hidden" name="id_mercado" value="1"> <!-- ID do mercado -->
+                                <input type="hidden" name="id_mercado" value="2"> <!-- ID do mercado -->
                                 @csrf
                                 <div class="input-group input-group-sm">
                                     <select name="avaliacao_preco" class="form-select" aria-label="Default select example">
@@ -189,12 +212,12 @@
                                     @php
                                     // Contando as avaliações
                                     $correto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Correto')
-                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_mercado', 2) // ID do mercado
                                     ->where('id_produto', 17) // ID do produto
                                     ->count();
 
                                     $incorreto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Incorreto')
-                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_mercado', 2) // ID do mercado
                                     ->where('id_produto', 17) // ID do produto
                                     ->count();
                                     @endphp
@@ -210,6 +233,15 @@
                     <div class="product-card">
                         <img src="images/pr_achocolatado.png" alt="Imagem do Produto 3">
                         <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                             <br>
                             <p class="product-name">Achocolatado em Pó Italac 400G</p>
                             <p class="product-price">R$ 40,00</p>
@@ -219,7 +251,7 @@
                             <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                             <form action="{{ route('avaliacao_produto') }}" class="d-inline" method="POST">
                                 <input type="hidden" name="id_produto" value="17"> <!-- ID do produto -->
-                                <input type="hidden" name="id_mercado" value="1"> <!-- ID do mercado -->
+                                <input type="hidden" name="id_mercado" value="3"> <!-- ID do mercado -->
                                 @csrf
                                 <div class="input-group input-group-sm">
                                     <select name="avaliacao_preco" class="form-select" aria-label="Default select example">
@@ -232,12 +264,12 @@
                                     @php
                                     // Contando as avaliações
                                     $correto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Correto')
-                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_mercado', 3) // ID do mercado
                                     ->where('id_produto', 17) // ID do produto
                                     ->count();
 
                                     $incorreto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Incorreto')
-                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_mercado', 3) // ID do mercado
                                     ->where('id_produto', 17) // ID do produto
                                     ->count();
                                     @endphp
@@ -253,6 +285,15 @@
                     <div class="product-card">
                         <img src="images/pr_achocolatado.png" alt="Imagem do Produto 4">
                         <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                             <br>
                             <p class="product-name">Achocolatado em Pó Italac 400G</p>
                             <p class="product-price">R$ 45,00</p>
@@ -262,7 +303,7 @@
                             <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                             <form action="{{ route('avaliacao_produto') }}" class="d-inline" method="POST">
                                 <input type="hidden" name="id_produto" value="17"> <!-- ID do produto -->
-                                <input type="hidden" name="id_mercado" value="1"> <!-- ID do mercado -->
+                                <input type="hidden" name="id_mercado" value="4"> <!-- ID do mercado -->
                                 @csrf
                                 <div class="input-group input-group-sm">
                                     <select name="avaliacao_preco" class="form-select" aria-label="Default select example">
@@ -275,12 +316,12 @@
                                     @php
                                     // Contando as avaliações
                                     $correto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Correto')
-                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_mercado', 4) // ID do mercado
                                     ->where('id_produto', 17) // ID do produto
                                     ->count();
 
                                     $incorreto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Incorreto')
-                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_mercado', 4) // ID do mercado
                                     ->where('id_produto', 17) // ID do produto
                                     ->count();
                                     @endphp
@@ -296,6 +337,15 @@
                     <div class="product-card">
                         <img src="images/pr_achocolatado2.png" alt="Imagem do Produto 5">
                         <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                             <br>
                             <p class="product-name">Achocolatado em Pó Original Toddy 400g</p>
                             <p class="product-price">R$ 50,00</p>
@@ -304,7 +354,7 @@
                             <br>
                             <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                             <form action="{{ route('avaliacao_produto') }}" class="d-inline" method="POST">
-                                <input type="hidden" name="id_produto" value="17"> <!-- ID do produto -->
+                                <input type="hidden" name="id_produto" value="18"> <!-- ID do produto -->
                                 <input type="hidden" name="id_mercado" value="1"> <!-- ID do mercado -->
                                 @csrf
                                 <div class="input-group input-group-sm">
@@ -319,12 +369,12 @@
                                     // Contando as avaliações
                                     $correto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Correto')
                                     ->where('id_mercado', 1) // ID do mercado
-                                    ->where('id_produto', 17) // ID do produto
+                                    ->where('id_produto', 18) // ID do produto
                                     ->count();
 
                                     $incorreto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Incorreto')
                                     ->where('id_mercado', 1) // ID do mercado
-                                    ->where('id_produto', 17) // ID do produto
+                                    ->where('id_produto', 18) // ID do produto
                                     ->count();
                                     @endphp
                                     <h6 class="mt-4">Quantidade de Avaliações:</h6>
@@ -339,6 +389,15 @@
                     <div class="product-card">
                         <img src="images/pr_achocolatado2.png" alt="Imagem do Produto 6">
                         <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                             <br>
                             <p class="product-name">Achocolatado em Pó Original Toddy 400g</p>
                             <p class="product-price">R$ 55,00</p>
@@ -347,8 +406,8 @@
                             <br>
                             <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                             <form action="{{ route('avaliacao_produto') }}" class="d-inline" method="POST">
-                                <input type="hidden" name="id_produto" value="17"> <!-- ID do produto -->
-                                <input type="hidden" name="id_mercado" value="1"> <!-- ID do mercado -->
+                                <input type="hidden" name="id_produto" value="18"> <!-- ID do produto -->
+                                <input type="hidden" name="id_mercado" value="2"> <!-- ID do mercado -->
                                 @csrf
                                 <div class="input-group input-group-sm">
                                     <select name="avaliacao_preco" class="form-select" aria-label="Default select example">
@@ -361,13 +420,13 @@
                                     @php
                                     // Contando as avaliações
                                     $correto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Correto')
-                                    ->where('id_mercado', 1) // ID do mercado
-                                    ->where('id_produto', 17) // ID do produto
+                                    ->where('id_mercado', 2) // ID do mercado
+                                    ->where('id_produto', 18) // ID do produto
                                     ->count();
 
                                     $incorreto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Incorreto')
-                                    ->where('id_mercado', 1) // ID do mercado
-                                    ->where('id_produto', 17) // ID do produto
+                                    ->where('id_mercado', 2) // ID do mercado
+                                    ->where('id_produto', 18) // ID do produto
                                     ->count();
                                     @endphp
                                     <h6 class="mt-4">Quantidade de Avaliações:</h6>
@@ -382,6 +441,15 @@
                     <div class="product-card">
                         <img src="images/pr_achocolatado2.png" alt="Imagem do Produto 7">
                         <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                             <br>
                             <p class="product-name">Achocolatado em Pó Original Toddy 400g</p>
                             <p class="product-price">R$ 60,00</p>
@@ -390,8 +458,8 @@
                             <br>
                             <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                             <form action="{{ route('avaliacao_produto') }}" class="d-inline" method="POST">
-                                <input type="hidden" name="id_produto" value="17"> <!-- ID do produto -->
-                                <input type="hidden" name="id_mercado" value="1"> <!-- ID do mercado -->
+                                <input type="hidden" name="id_produto" value="18"> <!-- ID do produto -->
+                                <input type="hidden" name="id_mercado" value="3"> <!-- ID do mercado -->
                                 @csrf
                                 <div class="input-group input-group-sm">
                                     <select name="avaliacao_preco" class="form-select" aria-label="Default select example">
@@ -404,13 +472,13 @@
                                     @php
                                     // Contando as avaliações
                                     $correto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Correto')
-                                    ->where('id_mercado', 1) // ID do mercado
+                                    ->where('id_mercado', 3) // ID do mercado
                                     ->where('id_produto', 17) // ID do produto
                                     ->count();
 
                                     $incorreto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Incorreto')
-                                    ->where('id_mercado', 1) // ID do mercado
-                                    ->where('id_produto', 17) // ID do produto
+                                    ->where('id_mercado', 3) // ID do mercado
+                                    ->where('id_produto', 18) // ID do produto
                                     ->count();
                                     @endphp
                                     <h6 class="mt-4">Quantidade de Avaliações:</h6>
@@ -425,6 +493,15 @@
                     <div class="product-card">
                         <img src="images/pr_achocolatado2.png" alt="Imagem do Produto 8">
                         <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                             <br>
                             <p class="product-name">Achocolatado em Pó Original Toddy 400g</p>
                             <p class="product-price">R$ 65,00</p>
@@ -433,8 +510,8 @@
                             <br>
                             <p class="product-review-label">Avalie a veracidade do preço do produto:</p>
                             <form action="{{ route('avaliacao_produto') }}" class="d-inline" method="POST">
-                                <input type="hidden" name="id_produto" value="17"> <!-- ID do produto -->
-                                <input type="hidden" name="id_mercado" value="1"> <!-- ID do mercado -->
+                                <input type="hidden" name="id_produto" value="18"> <!-- ID do produto -->
+                                <input type="hidden" name="id_mercado" value="4"> <!-- ID do mercado -->
                                 @csrf
                                 <div class="input-group input-group-sm">
                                     <select name="avaliacao_preco" class="form-select" aria-label="Default select example">
@@ -447,13 +524,13 @@
                                     @php
                                     // Contando as avaliações
                                     $correto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Correto')
-                                    ->where('id_mercado', 1) // ID do mercado
-                                    ->where('id_produto', 17) // ID do produto
+                                    ->where('id_mercado', 4) // ID do mercado
+                                    ->where('id_produto', 18) // ID do produto
                                     ->count();
 
                                     $incorreto = App\Models\AvaliacaoProduto::where('avaliacao_preco', 'Incorreto')
-                                    ->where('id_mercado', 1) // ID do mercado
-                                    ->where('id_produto', 17) // ID do produto
+                                    ->where('id_mercado', 4) // ID do mercado
+                                    ->where('id_produto', 18) // ID do produto
                                     ->count();
                                     @endphp
                                     <h6 class="mt-4">Quantidade de Avaliações:</h6>

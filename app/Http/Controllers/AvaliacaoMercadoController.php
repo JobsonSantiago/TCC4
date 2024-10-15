@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\AvaliacaoMercados; // Atualize para usar AvaliacaoProduto
+use App\Models\AvaliacaoMercados;
 use App\Models\ProdutosCaracteristicas;
 
 class AvaliacaoMercadoController extends Controller

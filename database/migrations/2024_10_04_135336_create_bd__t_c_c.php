@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    // Migration para a tabela produtos
+
     public function up()
     {
         Schema::create('produtos', function (Blueprint $table) {
@@ -44,6 +44,14 @@ return new class extends Migration
             $table->foreignId('id_mercado')->constrained('mercados', 'id_mercado');
             $table->timestamps();
         });
+
+        Schema::create('favoritos', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('id_produto')->constrained()->onDelete('cascade');
+            $table->foreignId('id_mercado')->constrained()->onDelete('cascade');
+            $table->timestamps();
+        });
     }
 
     public function down()
@@ -53,5 +61,6 @@ return new class extends Migration
         Schema::dropIfExists('produtos_caracteristicas');
         Schema::dropIfExists('mercados');
         Schema::dropIfExists('produtos');
+        Schema::dropIfExists('favoritos');
     }
 };

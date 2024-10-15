@@ -131,6 +131,15 @@
                 <div class="product-card">
                     <img src="images/pr_sabonete.png" alt="Imagem do Produto 1">
                     <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                         <br>
                         <p class="product-name">Sabonete em Barra Dove Original 90g</p>
                         <p class="product-price">R$ 30,00</p>
@@ -174,6 +183,15 @@
                 <div class="product-card">
                     <img src="images/pr_sabonete.png" alt="Imagem do Produto 2">
                     <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                         <br>
                         <p class="product-name">Sabonete em Barra Dove Original 90g</p>
                         <p class="product-price">R$ 35,00</p>
@@ -217,6 +235,15 @@
                 <div class="product-card">
                     <img src="images/pr_sabonete.png" alt="Imagem do Produto 3">
                     <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                         <br>
                         <p class="product-name">Sabonete em Barra Dove Original 90g</p>
                         <p class="product-price">R$ 40,00</p>
@@ -260,6 +287,15 @@
                 <div class="product-card">
                     <img src="images/pr_sabonete.png" alt="Imagem do Produto 4">
                     <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                         <br>
                         <p class="product-name">Sabonete em Barra Dove Original 90g</p>
                         <p class="product-price">R$ 45,00</p>
@@ -333,6 +369,15 @@
                         </button>
                     </div>
                     <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                         <br>
                         <p class="product-name">Sabonete Lux Botanicals 85g</p>
                         <p class="product-price">R$ 50,00</p>
@@ -407,6 +452,15 @@
                         </button>
                     </div>
                     <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                         <br>
                         <p class="product-name">Sabonete Lux Botanicals 85g</p>
                         <p class="product-price">R$ 55,00</p>
@@ -481,6 +535,15 @@
                         </button>
                     </div>
                     <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                         <br>
                         <p class="product-name">Sabonete Lux Botanicals 85g</p>
                         <p class="product-price">R$ 52,00</p>
@@ -555,6 +618,15 @@
                         </button>
                     </div>
                     <div class="product-info">
+                            <form action="{{ route('favoritar') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_mercado" value="1">
+                                <button class="btn btn-danger favorite-button">
+                                    <i class="far fa-heart heart-empty"></i>
+                                    <i class="fas fa-heart heart-filled" style="display:none;"></i>
+                                </button>
+                            </form>
                         <br>
                         <p class="product-name">Sabonete Lux Botanicals 85g</p>
                         <p class="product-price">R$ 53,00</p>
