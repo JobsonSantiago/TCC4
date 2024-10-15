@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Out-2024 às 20:02
+-- Tempo de geração: 15-Out-2024 às 15:46
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -75,7 +75,9 @@ INSERT INTO `avaliacao_preco` (`id_avaliacao_preco`, `avaliacao_preco`, `id_prod
 (8, 'Incorreto', 17, 1, '2024-10-04 23:02:55', '2024-10-04 23:02:55'),
 (9, 'Correto', 17, 1, '2024-10-08 01:05:11', '2024-10-08 01:05:11'),
 (10, 'Correto', 17, 1, '2024-10-08 01:10:21', '2024-10-08 01:10:21'),
-(11, 'Incorreto', 17, 1, '2024-10-08 01:15:59', '2024-10-08 01:15:59');
+(11, 'Incorreto', 17, 1, '2024-10-08 01:15:59', '2024-10-08 01:15:59'),
+(12, 'Incorreto', 1, 1, '2024-10-15 16:35:39', '2024-10-15 16:35:39'),
+(13, 'Correto', 1, 2, '2024-10-15 16:35:42', '2024-10-15 16:35:42');
 
 -- --------------------------------------------------------
 
@@ -116,6 +118,32 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `favoritos`
+--
+
+CREATE TABLE `favoritos` (
+  `id_favorito` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `id_produto` bigint(20) UNSIGNED NOT NULL,
+  `id_mercado` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `favoritos`
+--
+
+INSERT INTO `favoritos` (`id_favorito`, `user_id`, `id_produto`, `id_mercado`, `created_at`, `updated_at`) VALUES
+(1, 1, 17, 1, '2024-10-15 15:36:28', '2024-10-15 15:36:28'),
+(2, 1, 17, 1, '2024-10-15 15:43:58', '2024-10-15 15:43:58'),
+(3, 1, 17, 1, '2024-10-15 15:54:44', '2024-10-15 15:54:44'),
+(4, 2, 17, 1, '2024-10-15 15:58:06', '2024-10-15 15:58:06'),
+(5, 2, 18, 1, '2024-10-15 16:10:30', '2024-10-15 16:10:30');
 
 -- --------------------------------------------------------
 
@@ -318,9 +346,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('55AQpJxd7QDrKFvrVfGYS7dGLVk7noQE8rXhRLO5', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiWUFBdVRNSXRKcjZqTndKdTNSZnIyQk9KYmxVTTByMmVScXY1dlRRRCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9tZXJjYWRvcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjA6e31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1728410506),
-('gVGEautmnp0wBV4ZHv9SmZOThHu6hQJHIg2WY6Cm', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoieTlQeDA3MmR4NUg0dlBlQjlxU3diUTJVQXRTczBNVndOd1V0V1BsSCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9zdWNvIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1728340261),
-('YmK7F4HYCebv36TBnLbQ0BhGsy1vtN30GI8leNRN', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiSzlaYnRwT21SNDJ4cW55SFBYdVNHU0hjQmtUS0I0QWxRQVBGOHd3ZyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjA6e31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1728338674);
+('O9GQxCRAS7xwbvcXZMG4BlzmioOQIgtB0M1A2R7M', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiM2p1a0w1VmdJQnRrUTVGcGNWQzBXNzhiQmtsWG1kNUNnV3JSVURMbyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2dpbiI7fXM6MzoidXJsIjthOjE6e3M6ODoiaW50ZW5kZWQiO3M6MjU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9zYWwiO319', 1728999915);
 
 -- --------------------------------------------------------
 
@@ -344,7 +370,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Jobson', 'jobson.santiago@etec.sp.gov.br', NULL, '$2y$12$AfxxY9XNvgxEqk/5PfNSeed85e2A21j9JdvAMb.hQHmk/x3QAgHye', NULL, '2024-10-04 23:02:03', '2024-10-04 23:02:03');
+(1, 'Jobson', 'jobson.santiago@etec.sp.gov.br', NULL, '$2y$12$AfxxY9XNvgxEqk/5PfNSeed85e2A21j9JdvAMb.hQHmk/x3QAgHye', NULL, '2024-10-04 23:02:03', '2024-10-04 23:02:03'),
+(2, 'messi', 'messi@gmail.com', NULL, '$2y$12$ObgcbHnvZ3WpVXU47PGeLO6wEyimX6c39IjAMRCGZZJ3DLLooInhS', NULL, '2024-10-15 15:57:53', '2024-10-15 15:57:53');
 
 --
 -- Índices para tabelas despejadas
@@ -383,6 +410,15 @@ ALTER TABLE `cache_locks`
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Índices para tabela `favoritos`
+--
+ALTER TABLE `favoritos`
+  ADD PRIMARY KEY (`id_favorito`),
+  ADD KEY `id_usuario` (`user_id`),
+  ADD KEY `id_produto` (`id_produto`),
+  ADD KEY `id_mercado` (`id_mercado`);
 
 --
 -- Índices para tabela `jobs`
@@ -458,13 +494,19 @@ ALTER TABLE `avaliacao_mercado`
 -- AUTO_INCREMENT de tabela `avaliacao_preco`
 --
 ALTER TABLE `avaliacao_preco`
-  MODIFY `id_avaliacao_preco` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_avaliacao_preco` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `favoritos`
+--
+ALTER TABLE `favoritos`
+  MODIFY `id_favorito` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `jobs`
@@ -500,7 +542,7 @@ ALTER TABLE `produtos_caracteristicas`
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para despejos de tabelas
@@ -518,6 +560,14 @@ ALTER TABLE `avaliacao_mercado`
 ALTER TABLE `avaliacao_preco`
   ADD CONSTRAINT `avaliacao_preco_id_mercado_foreign` FOREIGN KEY (`id_mercado`) REFERENCES `mercados` (`id_mercado`),
   ADD CONSTRAINT `avaliacao_preco_id_produto_foreign` FOREIGN KEY (`id_produto`) REFERENCES `produtos` (`id_produto`);
+
+--
+-- Limitadores para a tabela `favoritos`
+--
+ALTER TABLE `favoritos`
+  ADD CONSTRAINT `favoritos_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `favoritos_ibfk_2` FOREIGN KEY (`id_produto`) REFERENCES `produtos` (`id_produto`) ON DELETE CASCADE,
+  ADD CONSTRAINT `favoritos_ibfk_3` FOREIGN KEY (`id_mercado`) REFERENCES `mercados` (`id_mercado`) ON DELETE CASCADE;
 
 --
 -- Limitadores para a tabela `produtos_caracteristicas`
