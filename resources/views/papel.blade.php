@@ -133,7 +133,7 @@
                     <div class="product-info">
                             <form action="{{ route('favoritar') }}" method="POST">
                                 @csrf
-                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_produto" value="33">
                                 <input type="hidden" name="id_mercado" value="1">
                                 <button class="btn btn-danger favorite-button">
                                     <i class="far fa-heart heart-empty"></i>
@@ -185,8 +185,8 @@
                     <div class="product-info">
                             <form action="{{ route('favoritar') }}" method="POST">
                                 @csrf
-                                <input type="hidden" name="id_produto" value="17">
-                                <input type="hidden" name="id_mercado" value="1">
+                                <input type="hidden" name="id_produto" value="33">
+                                <input type="hidden" name="id_mercado" value="2">
                                 <button class="btn btn-danger favorite-button">
                                     <i class="far fa-heart heart-empty"></i>
                                     <i class="fas fa-heart heart-filled" style="display:none;"></i>
@@ -237,8 +237,8 @@
                     <div class="product-info">
                             <form action="{{ route('favoritar') }}" method="POST">
                                 @csrf
-                                <input type="hidden" name="id_produto" value="17">
-                                <input type="hidden" name="id_mercado" value="1">
+                                <input type="hidden" name="id_produto" value="33">
+                                <input type="hidden" name="id_mercado" value="3">
                                 <button class="btn btn-danger favorite-button">
                                     <i class="far fa-heart heart-empty"></i>
                                     <i class="fas fa-heart heart-filled" style="display:none;"></i>
@@ -289,8 +289,8 @@
                     <div class="product-info">
                             <form action="{{ route('favoritar') }}" method="POST">
                                 @csrf
-                                <input type="hidden" name="id_produto" value="17">
-                                <input type="hidden" name="id_mercado" value="1">
+                                <input type="hidden" name="id_produto" value="33">
+                                <input type="hidden" name="id_mercado" value="4">
                                 <button class="btn btn-danger favorite-button">
                                     <i class="far fa-heart heart-empty"></i>
                                     <i class="fas fa-heart heart-filled" style="display:none;"></i>
@@ -341,7 +341,7 @@
                     <div class="product-info">
                             <form action="{{ route('favoritar') }}" method="POST">
                                 @csrf
-                                <input type="hidden" name="id_produto" value="17">
+                                <input type="hidden" name="id_produto" value="34">
                                 <input type="hidden" name="id_mercado" value="1">
                                 <button class="btn btn-danger favorite-button">
                                     <i class="far fa-heart heart-empty"></i>
@@ -393,8 +393,8 @@
                     <div class="product-info">
                             <form action="{{ route('favoritar') }}" method="POST">
                                 @csrf
-                                <input type="hidden" name="id_produto" value="17">
-                                <input type="hidden" name="id_mercado" value="1">
+                                <input type="hidden" name="id_produto" value="34">
+                                <input type="hidden" name="id_mercado" value="2">
                                 <button class="btn btn-danger favorite-button">
                                     <i class="far fa-heart heart-empty"></i>
                                     <i class="fas fa-heart heart-filled" style="display:none;"></i>
@@ -445,8 +445,8 @@
                     <div class="product-info">
                             <form action="{{ route('favoritar') }}" method="POST">
                                 @csrf
-                                <input type="hidden" name="id_produto" value="17">
-                                <input type="hidden" name="id_mercado" value="1">
+                                <input type="hidden" name="id_produto" value="34">
+                                <input type="hidden" name="id_mercado" value="3">
                                 <button class="btn btn-danger favorite-button">
                                     <i class="far fa-heart heart-empty"></i>
                                     <i class="fas fa-heart heart-filled" style="display:none;"></i>
@@ -497,8 +497,8 @@
                     <div class="product-info">
                             <form action="{{ route('favoritar') }}" method="POST">
                                 @csrf
-                                <input type="hidden" name="id_produto" value="17">
-                                <input type="hidden" name="id_mercado" value="1">
+                                <input type="hidden" name="id_produto" value="34">
+                                <input type="hidden" name="id_mercado" value="4">
                                 <button class="btn btn-danger favorite-button">
                                     <i class="far fa-heart heart-empty"></i>
                                     <i class="fas fa-heart heart-filled" style="display:none;"></i>
