@@ -95,6 +95,13 @@
                     </label>
                 </div>
 
+                <!-- Link para recuperação de senha -->
+                <div class="text-center mt-3">
+                    <a href="{{ route('password.request') }}" class="text-sm text-gray-600 hover:text-gray-900">
+                        {{ __('Esqueceu sua senha?') }}
+                    </a>
+                </div>
+
                 <div class="text-center mt-3">
                     <p>Não tem uma conta? <a href="{{ route('register') }}">Cadastre-se</a></p>
                 </div>

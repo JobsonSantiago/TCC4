@@ -225,7 +225,7 @@
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Links Úteis</h5>
                     <p>
-                        <a href="{{ route('home') }}" class="text-white" style="text-decoration: none;">home</a>
+                        <a href="{{ route('home') }}" class="text-white" style="text-decoration: none;">Inicio</a>
                     </p>
                     <p>
                         <a href="{{ route('mercados') }}" class="text-white" style="text-decoration: none;">Mercados</a>
